@@ -9,6 +9,7 @@ function App() {
   const [time, setTime] = useState(10);
 
   const buttonRef = useRef(null);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     if (time > 0 && !showImage) {
@@ -20,6 +21,7 @@ function App() {
   useEffect(() => {
     if (time === 0 && !showImage) {
       setShowImage(true);
+      audioRef.current.play(); // autoplay the audio
     }
   }, [time, showImage]);
 
@@ -60,9 +62,11 @@ function App() {
     position: 'absolute',
     left: buttonPosition.x,
     top: buttonPosition.y,
+    fontSize: '24px',
+    padding: '12px 24px',
   };
 
-  const isCursorInButton = (event) => {
+  const isCursorInButton = () => {
     if (buttonRef.current) {
       const buttonRect = buttonRef.current.getBoundingClientRect();
       const isCursorInButton = (
@@ -75,19 +79,3 @@ function App() {
     }
     return false;
   };
-  
-  
-
-  return (
-    <div className="App" onMouseMove={handleMouseMove}>
-      {showImage && <img src="https://cdn3.whatculture.com/images/2019/01/0a474a9ae0b07ce8-1200x675.jpg" alt=""/>}
-      <button ref={buttonRef} style={buttonStyle} onClick={handleClick}>
-        Click Me
-      </button>
-      <div className="score">Score: {score}</div>
-      <div className="timer">Time: {time}s</div>
-    </div>
-  );
-}
-
-export default App;
