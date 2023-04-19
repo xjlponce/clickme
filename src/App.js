@@ -80,7 +80,7 @@ function App() {
 
   return (
     <div className="App" onMouseMove={handleMouseMove}>
-      {showImage && <img src="https://miro.medium.com/max/1200/1*Mf1hQ5HZp-Dmu-c-v-Z6NA.jpeg" alt=""/>}
+      {showImage && <img src="https://cdn3.whatculture.com/images/2019/01/0a474a9ae0b07ce8-1200x675.jpg" alt=""/>}
       <button ref={buttonRef} style={buttonStyle} onClick={handleClick}>
         Click Me
       </button>
