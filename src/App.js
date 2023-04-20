@@ -87,7 +87,7 @@ function App() {
       </button>
       <div className="score">Score: {score}</div>
       <div className="timer">Time: {time}s</div>
-      <audio ref={audioRef} src="C:\Users\Admin\Desktop\sart\my-app\src\onlymp3.to - Scary Scream Sound Effect HD-F2hvl2iOI8k-256k-1656015137467.mp3" autoPlay />
+      <audio ref={audioRef} src="onlymp3.to - Scary Scream Sound Effect HD-F2hvl2iOI8k-256k-1656015137467.mp3" autoPlay />
 
     </div>
   );
